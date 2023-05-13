@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Salary Hike Calculator</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="description"
+      content="This application makes it possible to calculate the New Salary by percentage / Percentage by New Salary." />
+    <meta name="author" content="Vaibhav Patel">
+    <meta property="og:title" content="Salary Hike Calculator" />
+    <meta property="og:url" content="https://github.com/patelvaibhavd/salary-hike-calculator" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="bs-example">
+      <nav role="navigation" class="navbar navbar-default">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="javascript:void(0)" class="navbar-brand">
+            <img src="./images/logo.png" alt="LOGO" height="20" width="30">
+          </a>
+        </div>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse ">
+          <ul class="nav navbar-nav">
+            <li id="salarybyPercentage" class="active" onclick="activeSection('salarybyPercentage')"><a href="javascript:void(0)">Find New Salary by Percentage</a></li>
+            <li id="percentagebyNewSalary" class="" onclick="activeSection('percentagebyNewSalary')"><a href="javascript:void(0)">Find Percentage by New Salary</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/patelvaibhavd/salary-hike-calculator" target="_blank"><img
+                  src="./images/github-mark.png" alt="GITHUB" width="18" height="18"></a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6 col-centered">
+              <div class="thumbnail">
+                <div class="caption text-center">
+                  <div id="salarybyPercentageSection">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <header>
+                          <h2 class="headers">Find New Salary by Percentage</h2>
+                        </header>
+                        <hr />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                          <div>
+                            <label class="input-label">Current Salary:</label>
+                            <input class="form-control" type="number" id="currentSalary" autocomplete="off" />
+                            <span id='error11'></span>
+                          </div>
+                          <div class="mt-15">
+                            <label class="input-label">Percentage of Increment:</label>
+                            <input class="form-control" type="number" id="percentageofIncrement" autocomplete="off" />
+                            <span id='error12'></span>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 st">
+                        <h5><strong>New Salary after Increment: </strong><span id="result1">0</span></h5>
+                      </div>
+                      <div class="col-md-12 st">
+                        <button class="btn btn-success" onclick="calculateNewSalary()">Calculate</button>
+                        <button class="btn btn-danger" onclick="clearFieldsForm1()">Clear</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="percentagebyNewSalarySection"  class="hide">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <header>
+                          <h2 class="headers">Find Percentage by New Salary</h2>
+                        </header>
+                        <hr />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                          <div>
+                            <label class="input-label">Current Salary:</label>
+                            <input class="form-control" type="number" id="currentSalaryPS" autocomplete="off" />
+                            <span id='error21'></span>
+                          </div>
+                          <div class="mt-15">
+                            <label class="input-label">New Salary:</label>
+                            <input class="form-control" type="number" id="newSalary" autocomplete="off" />
+                            <span id='error22'></span>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 st">
+                        <h5><strong>Percentage of Change: </strong><span id="result2">0 %</span></h5>
+                      </div>
+                      <div class="col-md-12 st">
+                        <button class="btn btn-success" onclick="calculatePercentageofIncrement()"> Calculate</button>
+                        <button class="btn btn-danger" onclick="clearFieldsForm2()">Clear</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">&nbsp;</div>
+        </div>
+      </div>
+    </div>
+    <footer class="fixed-bottom">
+      <div>
+        2023 - Vaibhav Patel - <a href="mailto:patelvaibhav27@gmail.com">patelvaibhav27@gmail.com</a></div>
+    </footer>
+    <script src="./scripts/script.js" crossorigin="anonymous"></script>
+    <script src="./scripts/jquery-2.1.3.min.js" crossorigin="anonymous"></script>
+    <script src="./scripts/bootstrap.min.js"></script>
+  </body>
+</html>
